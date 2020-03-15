@@ -19,43 +19,70 @@ nav {
   margin: 0;
   padding: 0;
   border: 0;
-  vertical-align: baseline;
 }
 /*
 Colores
 */
 :root {
+  --bg-encabezado: rgb(174, 63, 61);
   --bg-playa: rgb(253, 252, 232);
   --bg-parque: rgb(236, 249, 228);
   --bg-rio: rgb(251, 240, 228);
-  --bg-boton: rgb(244, 170, 118)
+  --bg-boton: rgb(244, 170, 118);
+  --txt-color: rgb(251, 247, 247);
 }
 body {
   font-family: 'DM Serif Text';
 }
+header {
+  background-color: var(--bg-encabezado);
+  color: var(--txt-color);
+}
+nav>ul {
+  display: flex;
+  flex-direction: row;
+  justify-content:center;
+  align-items: center;
+  text-decoration: none;
+  list-style: none;
+}
+nav>ul>li {
+  margin: 0 3px 0 3px;
+}
 h1, h2 {
   font-family: 'Love Ya Like A Sister';
 }
-
+nav>ul>li>a {
+  color: var(--txt-color);
+  text-decoration: none;
+}
+.playa {
+  background-color: var(--bg-playa);
+}
+.parque {
+  background-color: var(--bg-parque);
+}
+.rio {
+  background-color: var(--bg-rio);
+}
+/* ----  Definicion de estilos para moviles  ---- */
 @media only screen and (max-width: 576px) {
+  header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
   header>h1 {
     text-align: center;
-    padding-top: 20px;
   }
-  nav>ul {
-    display: flex;
-    flex-direction: row;
-    justify-content:center;
-    padding: 10px;
-    text-decoration: none;
-    list-style: none;
+  nav {
+    justify-content: center;
   }
-  nav>ul>li {
-    margin: 0 5px 0 5px;
-  }
+
   .principal {
     display: flex;
     flex-direction: column;
+    width: 100%;
   }
   .contenido {
 
@@ -76,10 +103,11 @@ h1, h2 {
 
   }
   .imagen-principal {
-
+    display: none;
   }
-  .imagen-secundaria {
-
+  .imagen-secundaria>img {
+    border-radius: 10px;
+    width: 100%;
   }
   .informacion {
 
@@ -91,9 +119,135 @@ h1, h2 {
 
   }
 }
-@media only screen and (max-width: 992px) {
 
+
+/* ----  Estilos para tabletas  ---- */
+@media only screen and (max-width: 992px) {
+  header {
+    background-color: var(--bg-encabezado);
+    display: flex;
+    justify-content: center;
+  }
+  header>h1 {
+    text-align: center;
+    padding: 10px;
+  }
+  nav {
+    display: flex;
+    align-items: center;
+  }
+  nav>ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 10px;
+    text-decoration: none;
+    list-style: none;
+  }
+  nav>ul>li {
+    margin: auto 5px auto 5px;
+    align-items: center;
+  }
+  .principal {
+
+  }
+  .contenido {
+
+  }
+  .lugar {
+
+  }
+  .descripcion {
+
+  }
+  .playa {
+
+  }
+  .parque {
+
+  }
+  .rio {
+
+  }
+  .imagen-principal>img {
+    width: 80%;
+    border-radius: 10px !important;
+    margin: 15px 40px 15px 40px;
+  }
+  .imagen-secundaria {
+    width: 80%;
+    border-radius: 10px !important;
+    margin: 15px 40px 15px 40px;
+  }
+  .informacion {
+
+  }
+  .tel {
+
+  }
+  .contacto {
+
+  }
 }
 @media only screen and (min-width: 992px) {
+  header {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+  header>h1 {
+    text-align: center;
+    padding: 10px;
+  }
+  nav>ul {
+    display: flex;
+    jus
+    padding: 10px 0 10px 0;
+    text-decoration: none;
+    list-style: none;
+  }
+  nav>ul>li {
+    margin: 0 5px 0 5px;
+  }
+  .principal {
 
+  }
+  .contenido {
+
+  }
+  .lugar>.contenido {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .descripcion {
+
+  }
+  .playa {
+
+  }
+  .parque {
+
+  }
+  .rio {
+
+  }
+  .imagen-principal>img {
+    width: 250px;
+    border-radius: 10px !important;
+    margin: 15px 40px 15px 40px;
+  }
+  .imagen-secundaria>img {
+    width: 250px;
+    margin: 15px 40px 15px 40px;
+    border-radius: 10px;
+  }
+  .informacion {
+
+  }
+  .tel {
+
+  }
+  .contacto {
+
+  }
 }
