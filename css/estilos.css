@@ -21,3 +21,79 @@ nav {
   border: 0;
   vertical-align: baseline;
 }
+/*
+Colores
+*/
+:root {
+  --bg-playa: rgb(253, 252, 232);
+  --bg-parque: rgb(236, 249, 228);
+  --bg-rio: rgb(251, 240, 228);
+  --bg-boton: rgb(244, 170, 118)
+}
+body {
+  font-family: 'DM Serif Text';
+}
+h1, h2 {
+  font-family: 'Love Ya Like A Sister';
+}
+
+@media only screen and (max-width: 576px) {
+  header>h1 {
+    text-align: center;
+    padding-top: 20px;
+  }
+  nav>ul {
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    padding: 10px;
+    text-decoration: none;
+    list-style: none;
+  }
+  nav>ul>li {
+    margin: 0 5px 0 5px;
+  }
+  .principal {
+    display: flex;
+    flex-direction: column;
+  }
+  .contenido {
+
+  }
+  .lugar {
+
+  }
+  .descripcion {
+
+  }
+  .playa {
+
+  }
+  .parque {
+
+  }
+  .rio {
+
+  }
+  .imagen-principal {
+
+  }
+  .imagen-secundaria {
+
+  }
+  .informacion {
+
+  }
+  .tel {
+
+  }
+  .contacto {
+
+  }
+}
+@media only screen and (max-width: 992px) {
+
+}
+@media only screen and (min-width: 992px) {
+
+}
