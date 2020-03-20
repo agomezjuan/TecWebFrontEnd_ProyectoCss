@@ -25,6 +25,7 @@ Colores
 */
 :root {
   --bg-encabezado: rgb(174, 63, 61);
+  --bg-principal: rgba(253, 252, 232, 0.5);
   --bg-playa: rgb(253, 252, 232);
   --bg-parque: rgb(236, 249, 228);
   --bg-rio: rgb(251, 240, 228);
@@ -56,6 +57,18 @@ nav>ul>li>a {
   color: var(--txt-color);
   text-decoration: none;
 }
+main>.principal {
+  width: 100%;
+}
+main>.principal>.contenido {
+  background-color: var(--bg-principal);
+  font-size: 0.5em;
+  padding:20px;
+  border-radius: 15px;
+}
+.principal>.contenido>h2 {
+  font-size: 2em;
+}
 .playa {
   background-color: var(--bg-playa);
 }
@@ -65,12 +78,56 @@ nav>ul>li>a {
 .rio {
   background-color: var(--bg-rio);
 }
+.descripcion>h2 {
+  text-align: center;
+  font-size: 3em;
+  margin-top: 30px;
+}
+.descripcion>p {
+  text-align: center;
+}
+.informacion {
+  text-align: center;
+  width: 40%;
+  margin-bottom: 30px;
+}
+.tel {
+  padding-top: 20px;
+}
+.contacto {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-playa);
+  border: 1px solid var(--bg-boton);
+  border-radius: 10px;
+  text-align: center;
+  padding: 20px 30px;
+  margin-bottom: 20px;
+}
+form>p {
+  display: flex;
+  flex-direction: column;
+  padding-top: 10px;
+}
+input, textarea, button {
+  border: 1px solid var(--bg-boton);
+}
+form>p>button {
+  background: var(--bg-boton);
+  align-self: center;
+  border-radius: 10px;
+  padding: 5px;
+  width: 70px;
+}
+
+
 /* ----  Definicion de estilos para moviles  ---- */
 @media only screen and (max-width: 576px) {
   header {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    width: 100%;
   }
   header>h1 {
     text-align: center;
@@ -78,17 +135,206 @@ nav>ul>li>a {
   nav {
     justify-content: center;
   }
+  main {
+    width: 100%;
+  }
+  main>.principal {
+    background-image: url("../images/inicial2.JPG");
+    background-size: cover;
+    background-position: left center;
+    background-repeat: no-repeat;
+    padding: 15px 30px;
+    width: 100%;
+  }
+  main>.principal>.contenido {
+    margin-bottom: 150px;
+    width: 100%;
+  }
+  .lugar {
 
-  .principal {
+  }
+
+  .playa, .parque, .rio {
+    display: flex;
+    flex-direction: column;
+  }
+  .imagen-principal {
+    display: none;
+  }
+  .contenido>.descripcion {
     display: flex;
     flex-direction: column;
     width: 100%;
   }
-  .contenido {
+  .descripcion {
+    text-align: center;
+  }
+  .imagen-secundaria {
+    padding: 20px;
+    width: 100%;
+  }
+  .imagen-secundaria>img {
+    border-radius: 10px;
+    align-self: center;
+    margin: 20px;
+    width: 100%;
+  }
+  footer {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }
+  .informacion {
+    width: 100%;
+  }
+  .tel {
 
   }
-  .lugar {
+  .contacto {
 
+  }
+}
+
+
+/* ----  Estilos para tabletas  ---- */
+@media only screen and (min-width: 577px) and (max-width: 992px) {
+  header {
+    background-color: var(--bg-encabezado);
+    display: flex;
+    justify-content: center;
+  }
+  header>h1 {
+    text-align: center;
+    padding: 10px;
+  }
+  nav {
+    display: flex;
+    align-self: center;
+  }
+  nav>ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 10px;
+    text-decoration: none;
+    list-style: none;
+  }
+  nav>ul>li {
+    margin: auto 5px auto 5px;
+    align-items: center;
+  }
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .principal {
+    background-image: url("../images/inicial2.JPG");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+  main>.principal>.contenido {
+    margin: 30px auto 150px auto;
+    width: 50%;
+  }
+  .lugar {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+  .lugar>.contenido {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
+  .descripcion {
+    width: 50%;
+  }
+  .playa {
+
+  }
+  .parque {
+
+  }
+  .rio {
+
+  }
+  .imagen-principal {
+    display: none;
+  }
+  .imagen-secundaria {
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+  }
+  .imagen-secundaria>img {
+    max-width: 80%;
+    border-radius: 10px;
+    margin: 30px;
+  }
+  footer {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 20px;
+  }
+  .informacion {
+    text-align: center;
+    width: 40%;
+  }
+  .contacto {
+    width: 40%;
+    margin: 0;
+  }
+}
+
+/* ---- Estilos para computadoras de Escritorio ---- */
+@media only screen and (min-width: 992px) {
+  header {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+  header>h1 {
+    text-align: center;
+    padding: 10px;
+  }
+  nav {
+    align-self: center;
+  }
+  nav>ul {
+    display: flex;
+    justify-content: flex-start;
+    padding: 10px 0 10px 0;
+    text-decoration: none;
+    list-style: none;
+  }
+  nav>ul>li {
+    margin: 0 5px 0 5px;
+  }
+  .principal {
+    background-image: url("../images/inicial2.JPG");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 30px;
+    padding-bottom: 250px;
+  }
+  .contenido {
+    max-width: 80%;
+  }
+  .lugar {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  .lugar>.contenido {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 90%;
   }
   .descripcion {
 
@@ -103,151 +349,31 @@ nav>ul>li>a {
 
   }
   .imagen-principal {
-    display: none;
-  }
-  .imagen-secundaria>img {
-    border-radius: 10px;
     width: 100%;
   }
-  .informacion {
-
-  }
-  .tel {
-
-  }
-  .contacto {
-
-  }
-}
-
-
-/* ----  Estilos para tabletas  ---- */
-@media only screen and (max-width: 992px) {
-  header {
-    background-color: var(--bg-encabezado);
-    display: flex;
-    justify-content: center;
-  }
-  header>h1 {
-    text-align: center;
-    padding: 10px;
-  }
-  nav {
-    display: flex;
-    align-items: center;
-  }
-  nav>ul {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    padding: 10px;
-    text-decoration: none;
-    list-style: none;
-  }
-  nav>ul>li {
-    margin: auto 5px auto 5px;
-    align-items: center;
-  }
-  .principal {
-
-  }
-  .contenido {
-
-  }
-  .lugar {
-
-  }
-  .descripcion {
-
-  }
-  .playa {
-
-  }
-  .parque {
-
-  }
-  .rio {
-
-  }
   .imagen-principal>img {
-    width: 80%;
+    width: 90%;
     border-radius: 10px !important;
-    margin: 15px 40px 15px 40px;
-  }
-  .imagen-secundaria {
-    width: 80%;
-    border-radius: 10px !important;
-    margin: 15px 40px 15px 40px;
-  }
-  .informacion {
-
-  }
-  .tel {
-
-  }
-  .contacto {
-
-  }
-}
-@media only screen and (min-width: 992px) {
-  header {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-  }
-  header>h1 {
-    text-align: center;
-    padding: 10px;
-  }
-  nav>ul {
-    display: flex;
-    jus
-    padding: 10px 0 10px 0;
-    text-decoration: none;
-    list-style: none;
-  }
-  nav>ul>li {
-    margin: 0 5px 0 5px;
-  }
-  .principal {
-
-  }
-  .contenido {
-
-  }
-  .lugar>.contenido {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-  .descripcion {
-
-  }
-  .playa {
-
-  }
-  .parque {
-
-  }
-  .rio {
-
-  }
-  .imagen-principal>img {
-    width: 250px;
-    border-radius: 10px !important;
-    margin: 15px 40px 15px 40px;
+    margin: 15px;
   }
   .imagen-secundaria>img {
-    width: 250px;
-    margin: 15px 40px 15px 40px;
+    width: 90%;
+    margin: 15px;
     border-radius: 10px;
   }
+  footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 10px;
+  }
   .informacion {
-
+    text-align: left;
+    margin: 30px;
   }
   .tel {
 
   }
   .contacto {
-
+    margin: 30px;
   }
 }
